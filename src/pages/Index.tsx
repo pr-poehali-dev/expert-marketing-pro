@@ -416,6 +416,39 @@ const Index = () => {
                   Записаться на консультацию
                 </Button>
               </form>
+              
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h3 className="text-center font-heading font-semibold text-lg mb-4 text-secondary">
+                  Мои контакты
+                </h3>
+                <div className="space-y-3">
+                  <a 
+                    href="https://max.ru/u/f9LHodD0cOIkaRTK8IHu3XqqA6Yo7V1cujLwDhw5flDx1Qu6RXmUBEVC8HE" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors"
+                  >
+                    <Icon name="MessageCircle" size={20} />
+                    <span>Мессенджер MAX</span>
+                  </a>
+                  <a 
+                    href="https://t.me/KavNewBot" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors"
+                  >
+                    <Icon name="Send" size={20} />
+                    <span>Telegram</span>
+                  </a>
+                  <a 
+                    href="mailto:uzso-to@ya.ru" 
+                    className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors"
+                  >
+                    <Icon name="Mail" size={20} />
+                    <span>uzso-to@ya.ru</span>
+                  </a>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
