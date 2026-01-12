@@ -83,6 +83,7 @@ const Index = () => {
               <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">О компании</a>
               <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Услуги</a>
               <a href="#why" className="text-sm font-medium hover:text-primary transition-colors">Преимущества</a>
+              <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
               <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
               <Button onClick={downloadChecklist} variant="outline" size="sm">
                 <Icon name="Download" size={16} className="mr-2" />
@@ -271,6 +272,60 @@ const Index = () => {
                   {advantage.description}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading font-bold text-4xl text-center mb-4 text-secondary">
+            Отзывы клиентов
+          </h2>
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+            Реальные результаты предпринимателей, которые доверили мне запуск своих товаров на маркетплейсах
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: 'Елена Смирнова',
+                business: 'Товары для дома',
+                text: 'За 2 месяца работы продажи выросли в 3 раза! Аналитика ниши помогла избежать ошибок, а карточки сразу начали конвертировать. Очень довольна результатом.',
+                rating: 5
+              },
+              {
+                name: 'Дмитрий Козлов',
+                business: 'Спортивные товары',
+                text: 'Профессиональный подход к делу. Получил не просто красивые карточки, а реально работающую стратегию продвижения. Рекомендую!',
+                rating: 5
+              },
+              {
+                name: 'Анна Петрова',
+                business: 'Детские товары',
+                text: 'Благодаря детальной аналитике рынка выбрала правильную нишу. Карточки оформлены идеально, покупатели оставляют положительные отзывы. Спасибо за работу!',
+                rating: 5
+              }
+            ].map((review, idx) => (
+              <Card key={idx} className="border-2 hover:shadow-xl transition-all animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <CardContent className="p-6">
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Icon key={i} name="Star" size={20} className="text-yellow-500 fill-yellow-500" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                    "{review.text}"
+                  </p>
+                  <div className="border-t pt-4">
+                    <p className="font-heading font-semibold text-secondary">
+                      {review.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {review.business}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
