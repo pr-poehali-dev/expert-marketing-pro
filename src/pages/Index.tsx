@@ -95,28 +95,37 @@ const Index = () => {
       </header>
 
       <section className="pt-32 pb-20 bg-gradient-to-br from-secondary via-secondary/95 to-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://cdn.poehali.dev/projects/ec941e82-cfd5-41bd-9d45-9a0a99f4b272/files/8d78249a-99b1-4c6d-9103-d93869f99b60.jpg" 
+            src="https://cdn.poehali.dev/files/Обложка 1.png" 
             alt="" 
             className="w-full h-full object-cover"
           />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center text-white animate-fade-in">
-            <h1 className="font-heading font-bold text-5xl md:text-6xl mb-6 leading-tight">
-              Эксперт-маркетолог для вашего бизнеса
-            </h1>
-            <p className="text-xl md:text-2xl mb-4 text-white/90 leading-relaxed">
-              Я — Эксперт-маркетолог (нейромейкер), Ваш надежный партнер в мире онлайн-торговли
-            </p>
-            <p className="text-lg mb-8 text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Помогу запустить ваш товар на Ozon, Wildberries и других площадках на основе цифр, а не догадок: 
-              проанализирую спрос, конкурентов, целевую аудиторию и оформлю карточки так, чтобы их замечали и покупали
-            </p>
-            <Button size="lg" className="bg-white text-secondary hover:bg-white/90 text-lg px-8 py-6 h-auto animate-scale-in">
-              <a href="#contact">Получить бесплатную консультацию</a>
-            </Button>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-white animate-fade-in">
+              <h1 className="font-heading font-bold text-5xl md:text-6xl mb-6 leading-tight">
+                Эксперт-маркетолог для вашего бизнеса
+              </h1>
+              <p className="text-xl md:text-2xl mb-4 text-white/90 leading-relaxed">
+                Я — Эксперт-маркетолог (нейромейкер), Ваш надежный партнер в мире онлайн-торговли
+              </p>
+              <p className="text-lg mb-8 text-white/80 leading-relaxed">
+                Помогу запустить ваш товар на Ozon, Wildberries и других площадках на основе цифр, а не догадок: 
+                проанализирую спрос, конкурентов, целевую аудиторию и оформлю карточки так, чтобы их замечали и покупали
+              </p>
+              <Button size="lg" className="bg-white text-secondary hover:bg-white/90 text-lg px-8 py-6 h-auto animate-scale-in">
+                <a href="#contact">Получить бесплатную консультацию</a>
+              </Button>
+            </div>
+            <div className="animate-fade-in hidden md:block">
+              <img 
+                src="https://cdn.poehali.dev/files/Обложка 1.png" 
+                alt="Эксперт по маркетплейсам" 
+                className="rounded-2xl shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
