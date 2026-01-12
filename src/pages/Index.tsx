@@ -1,12 +1,360 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent } from '@/components/ui/card';
+import Icon from '@/components/ui/icon';
+import { toast } from 'sonner';
 
 const Index = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+  };
+
+  const downloadChecklist = () => {
+    const checklistContent = `
+ЧЕК-ЛИСТ ПОДГОТОВКИ КАРТОЧКИ ТОВАРА К ЗАГРУЗКЕ НА МАРКЕТПЛЕЙСЫ
+
+1. АНАЛИТИКА И СТРАТЕГИЯ
+   ☐ Проведен анализ спроса на товар
+   ☐ Изучены конкуренты и их карточки
+   ☐ Определена целевая аудитория
+   ☐ Сформулировано УТП (уникальное торговое предложение)
+
+2. КОНТЕНТ КАРТОЧКИ
+   ☐ Название содержит ключевые запросы (до 200 символов)
+   ☐ Описание раскрывает выгоды для покупателя
+   ☐ Указаны все характеристики товара
+   ☐ Прописаны преимущества перед конкурентами
+
+3. ВИЗУАЛЬНАЯ ЧАСТЬ
+   ☐ Главное фото показывает товар крупным планом
+   ☐ Подготовлено 5-8 фотографий с разных ракурсов
+   ☐ Добавлены инфографики с характеристиками
+   ☐ Показаны варианты использования товара
+   ☐ Соблюдены требования площадки по размеру и качеству
+
+4. ЦЕНООБРАЗОВАНИЕ
+   ☐ Цена конкурентоспособна в нише
+   ☐ Учтены комиссии маркетплейса
+   ☐ Рассчитана маржинальность
+   ☐ Запланированы акции и скидки
+
+5. SEO-ОПТИМИЗАЦИЯ
+   ☐ В название добавлены ключевые слова
+   ☐ Описание содержит поисковые запросы
+   ☐ Заполнены все атрибуты товара
+   ☐ Указаны синонимы и альтернативные названия
+
+6. ПЕРЕД ПУБЛИКАЦИЕЙ
+   ☐ Проверена орфография и пунктуация
+   ☐ Карточка просмотрена на мобильном устройстве
+   ☐ Все поля заполнены согласно требованиям площадки
+   ☐ Подготовлен план продвижения после публикации
+
+Экспертная поддержка: marketplace-expert.ru
+    `;
+
+    const blob = new Blob([checklistContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'checklist-kartochka-tovara.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    toast.success('Чек-лист успешно скачан!');
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="font-heading font-bold text-2xl text-secondary">
+              Нейромейкер
+            </div>
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">О компании</a>
+              <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Услуги</a>
+              <a href="#why" className="text-sm font-medium hover:text-primary transition-colors">Преимущества</a>
+              <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
+              <Button onClick={downloadChecklist} variant="outline" size="sm">
+                <Icon name="Download" size={16} className="mr-2" />
+                Чек-лист
+              </Button>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section className="pt-32 pb-20 bg-gradient-to-br from-secondary via-secondary/95 to-primary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white animate-fade-in">
+            <h1 className="font-heading font-bold text-5xl md:text-6xl mb-6 leading-tight">
+              Эксперт-маркетолог для вашего бизнеса
+            </h1>
+            <p className="text-xl md:text-2xl mb-4 text-white/90 leading-relaxed">
+              Я — Эксперт-маркетолог (нейромейкер), Ваш надежный партнер в мире онлайн-торговли
+            </p>
+            <p className="text-lg mb-8 text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Помогу запустить ваш товар на Ozon, Wildberries и других площадках на основе цифр, а не догадок: 
+              проанализирую спрос, конкурентов, целевую аудиторию и оформлю карточки так, чтобы их замечали и покупали
+            </p>
+            <Button size="lg" className="bg-white text-secondary hover:bg-white/90 text-lg px-8 py-6 h-auto animate-scale-in">
+              <a href="#contact">Получить бесплатную консультацию</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-heading font-bold text-4xl text-center mb-6 text-secondary">
+              Кто я и чем полезен
+            </h2>
+            <p className="text-lg text-center mb-12 text-muted-foreground leading-relaxed">
+              Моя задача — помочь вам выбрать прибыльную нишу и создать карточки товаров, которые будут продавать. 
+              Я предлагаю комплексную услугу, которая сэкономит ваше время, даст точное понимание спроса и обеспечит 
+              уверенность в каждом шаге. Вы получите привлекательные карточки, готовые к продаже, и четкий план действий.
+            </p>
+            <div className="text-center">
+              <h3 className="font-heading font-semibold text-2xl mb-8 text-secondary">
+                Что вы получите?
+              </h3>
+              <p className="text-lg text-muted-foreground">
+                В структуре нашей работы вы найдете все необходимое для успешного старта и развития на маркетплейсах.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading font-bold text-4xl text-center mb-16 text-secondary">
+            Что входит в услугу
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                icon: 'TrendingUp',
+                title: 'Анализ спроса на товары и услуги',
+                description: 'Изучаю тренды, частоту запросов и динамику продаж по категориям, чтобы понять, что действительно покупают.'
+              },
+              {
+                icon: 'Users',
+                title: 'Анализ конкурентов',
+                description: 'Смотрю сильных игроков, их цены, УТП, оформление карточек и отзывы, чтобы найти точки преимущества для вашего продукта.'
+              },
+              {
+                icon: 'Target',
+                title: 'Анализ целевой аудитории',
+                description: 'Определяю, кто ваши покупатели, что для них важно и за что они готовы платить, чтобы выстроить правильное позиционирование.'
+              },
+              {
+                icon: 'BarChart3',
+                title: 'Оценка объёма и роста рынка',
+                description: 'Проверяю, растёт ли категория, насколько она ёмкая и не находится ли спрос на плато или в падении.'
+              },
+              {
+                icon: 'Database',
+                title: 'Сохранение всей аналитики',
+                description: 'Подготавливаю структурированный отчёт в удобном формате (таблица, документ или онлайн-дашборд) для дальнейшей работы.'
+              },
+              {
+                icon: 'FileText',
+                title: 'Создание и оптимизация карточек',
+                description: 'Разрабатываю структуру, тексты, выгоды, дизайн и визуалы для карточек под Ozon, Wildberries и другие площадки.'
+              }
+            ].map((service, idx) => (
+              <Card key={idx} className="border-2 hover:border-primary transition-all hover:shadow-lg animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Icon name={service.icon} size={28} className="text-primary" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-xl mb-3 text-secondary">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading font-bold text-4xl text-center mb-16 text-secondary">
+            Что вы получите на выходе
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                icon: 'Lightbulb',
+                title: 'План действий',
+                description: 'Чёткое понимание, стоит ли заходить в нишу: цифры по спросу, конкуренции, целевой аудитории, объёму и перспективам рынка.'
+              },
+              {
+                icon: 'ClipboardCheck',
+                title: 'Готовый отчёт',
+                description: 'Список рекомендаций по позиционированию и ассортименту, чтобы вы не тратили бюджет на «слепой» запуск.'
+              },
+              {
+                icon: 'ShoppingCart',
+                title: 'Карточки, готовые к загрузке',
+                description: 'Полностью подготовленные карточки товаров, которые можно сразу загружать на маркетплейсы, — с продуманными текстами, структурой и визуалом под вашу нишу.'
+              }
+            ].map((result, idx) => (
+              <Card key={idx} className="text-center border-2 hover:shadow-xl transition-all animate-fade-in" style={{ animationDelay: `${idx * 0.15}s` }}>
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Icon name={result.icon} size={32} className="text-white" />
+                  </div>
+                  <h3 className="font-heading font-bold text-2xl mb-4 text-secondary">
+                    {result.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {result.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="why" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading font-bold text-4xl text-center mb-6 text-secondary">
+            Почему именно я?
+          </h2>
+          <p className="text-lg text-center mb-12 text-muted-foreground max-w-3xl mx-auto">
+            Глубокое понимание алгоритмов маркетплейсов позволяют мне предлагать системные и эффективные решения. 
+            Я работаю на результат, чтобы ваш бизнес рос и процветал.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                icon: 'Store',
+                title: 'Фокус на маркетплейсах',
+                description: 'Работа с российскими площадками и понимание их требований к карточкам, ценам и контенту.'
+              },
+              {
+                icon: 'Layers',
+                title: 'Системный подход',
+                description: 'Сначала аналитика ниши и рынка, затем стратегия и только после этого создание карточек, а не наоборот.'
+              },
+              {
+                icon: 'Award',
+                title: 'Ориентация на результат',
+                description: 'Цель — не просто сделать «красивые» карточки, а дать вам нишу и оформление, которые повышают шансы на продажи и масштабирование.'
+              }
+            ].map((advantage, idx) => (
+              <div key={idx} className="text-center animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Icon name={advantage.icon} size={40} className="text-primary" />
+                </div>
+                <h3 className="font-heading font-semibold text-xl mb-3 text-secondary">
+                  {advantage.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {advantage.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 bg-gradient-to-br from-secondary to-primary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center text-white mb-12">
+            <h2 className="font-heading font-bold text-4xl mb-6">
+              Начните свой путь к успеху
+            </h2>
+            <p className="text-lg text-white/90 mb-8">
+              Опишите вашу идею или текущую нишу в короткой заявке для анализа и получения рекомендаций. 
+              Оставьте заявку на бесплатную консультацию по вашей нише прямо сейчас!
+            </p>
+          </div>
+          <Card className="max-w-xl mx-auto animate-scale-in">
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Input
+                    placeholder="Ваше имя"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="tel"
+                    placeholder="Телефон"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    required
+                    className="h-12"
+                  />
+                </div>
+                <div>
+                  <Textarea
+                    placeholder="Опишите вашу нишу или идею товара"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required
+                    rows={4}
+                    className="resize-none"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg h-14">
+                  Записаться на консультацию
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <footer className="py-8 bg-secondary text-white/80">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="font-heading font-bold text-xl text-white">
+              Нейромейкер
+            </div>
+            <div className="flex items-center gap-6">
+              <a href="#about" className="hover:text-white transition-colors">О компании</a>
+              <a href="#services" className="hover:text-white transition-colors">Услуги</a>
+              <a href="#contact" className="hover:text-white transition-colors">Контакты</a>
+            </div>
+            <div className="text-sm">
+              © 2024 Все права защищены
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
