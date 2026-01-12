@@ -85,7 +85,7 @@ const Index = () => {
               <a href="#why" className="text-sm font-medium hover:text-primary transition-colors">Преимущества</a>
               <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
               <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
-              <Button onClick={downloadChecklist} size="sm" className="bg-red-600 text-white hover:bg-red-700 border-0">
+              <Button onClick={downloadChecklist} size="sm" className="bg-red-600 text-white hover:bg-red-700 border-0 rounded-full">
                 <Icon name="Download" size={16} className="mr-2" />
                 Чек-лист
               </Button>
@@ -115,7 +115,7 @@ const Index = () => {
                 Помогу запустить ваш товар на Ozon, Wildberries и других площадках на основе цифр, а не догадок: 
                 проанализирую спрос, конкурентов, целевую аудиторию и оформлю карточки так, чтобы их замечали и покупали
               </p>
-              <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 text-lg px-8 py-6 h-auto animate-scale-in">
+              <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 text-lg px-8 py-6 h-auto animate-scale-in animate-pulse-glow rounded-full">
                 <a href="#contact">Получить бесплатную консультацию</a>
               </Button>
             </div>
@@ -421,7 +421,7 @@ const Index = () => {
                     className="resize-none"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-red-600 hover:bg-red-700 text-white text-lg h-14">
+                <Button type="submit" size="lg" className="w-full bg-red-600 hover:bg-red-700 text-white text-lg h-14 rounded-full animate-pulse-glow">
                   Записаться на консультацию
                 </Button>
               </form>
