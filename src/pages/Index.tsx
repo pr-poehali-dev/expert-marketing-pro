@@ -119,11 +119,11 @@ const Index = () => {
                 <a href="#contact">Получить бесплатную консультацию</a>
               </Button>
             </div>
-            <div className="animate-fade-in hidden md:block">
+            <div className="animate-slide-in-right hidden md:block">
               <img 
                 src="https://cdn.poehali.dev/files/Обложка 1.png" 
                 alt="Эксперт по маркетплейсам" 
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl shadow-2xl animate-float hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>
