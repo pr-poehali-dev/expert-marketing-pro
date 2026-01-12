@@ -94,8 +94,15 @@ const Index = () => {
         </nav>
       </header>
 
-      <section className="pt-32 pb-20 bg-gradient-to-br from-secondary via-secondary/95 to-primary">
-        <div className="container mx-auto px-4">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-secondary via-secondary/95 to-primary relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://cdn.poehali.dev/projects/ec941e82-cfd5-41bd-9d45-9a0a99f4b272/files/8d78249a-99b1-4c6d-9103-d93869f99b60.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white animate-fade-in">
             <h1 className="font-heading font-bold text-5xl md:text-6xl mb-6 leading-tight">
               Эксперт-маркетолог для вашего бизнеса
@@ -114,8 +121,15 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-20 bg-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://cdn.poehali.dev/projects/ec941e82-cfd5-41bd-9d45-9a0a99f4b272/files/0b6a4d94-0bdf-47b7-b8f9-2e839c820cac.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-heading font-bold text-4xl text-center mb-6 text-secondary">
               Кто я и чем полезен
@@ -193,8 +207,15 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://cdn.poehali.dev/projects/ec941e82-cfd5-41bd-9d45-9a0a99f4b272/files/9416de18-3da5-4e4a-b693-574b9fd8c650.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="font-heading font-bold text-4xl text-center mb-16 text-secondary">
             Что вы получите на выходе
           </h2>
@@ -277,8 +298,15 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section id="reviews" className="py-20 bg-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://cdn.poehali.dev/projects/ec941e82-cfd5-41bd-9d45-9a0a99f4b272/files/0b6a4d94-0bdf-47b7-b8f9-2e839c820cac.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="font-heading font-bold text-4xl text-center mb-4 text-secondary">
             Отзывы клиентов
           </h2>
