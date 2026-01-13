@@ -114,14 +114,13 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-white animate-fade-in">
               <h1 className="font-heading font-bold text-5xl md:text-6xl mb-6 leading-tight">
-                Эксперт-маркетолог для вашего бизнеса
+                Маркетолог-аналитик: найду точки роста прибыли
               </h1>
               <p className="text-xl md:text-2xl mb-4 text-white/90 leading-relaxed">
                 Я — Эксперт-маркетолог (нейромейкер), Ваш надежный партнер в мире онлайн-торговли
               </p>
               <p className="text-lg mb-8 text-white/80 leading-relaxed">
-                Помогу запустить ваш товар на Ozon, Wildberries и других площадках на основе цифр, а не догадок: 
-                проанализирую спрос, конкурентов, целевую аудиторию и оформлю карточки так, чтобы их замечали и покупали
+                Помогу запустить и проанализирую спрос на товар на маркетплейсах на основе цифр. Покажу, где теряешь до 40% продаж. Узнай, жми!
               </p>
               <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 text-lg px-8 py-6 h-auto animate-scale-in animate-pulse-glow rounded-full">
                 <a href="#contact">Получить бесплатную консультацию</a>
