@@ -11,11 +11,19 @@ const Index = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Отправка цели в Яндекс.Метрику
+    if (typeof window !== 'undefined' && (window as any).ym) {
+      (window as any).ym(106231633, 'reachGoal', 'consultation_form_submit');
+    }
     toast.success('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   const downloadChecklist = () => {
+    // Отправка цели в Яндекс.Метрику
+    if (typeof window !== 'undefined' && (window as any).ym) {
+      (window as any).ym(106231633, 'reachGoal', 'checklist_download');
+    }
     const checklistContent = `
 ЧЕК-ЛИСТ ПОДГОТОВКИ КАРТОЧКИ ТОВАРА К ЗАГРУЗКЕ НА МАРКЕТПЛЕЙСЫ
 
