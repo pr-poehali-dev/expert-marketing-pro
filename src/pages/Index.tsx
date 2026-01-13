@@ -444,6 +444,11 @@ const Index = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).ym) {
+                        (window as any).ym(106231633, 'reachGoal', 'click_max_messenger');
+                      }
+                    }}
                   >
                     <Icon name="MessageCircle" size={20} />
                     <span>Мессенджер MAX</span>
@@ -453,6 +458,11 @@ const Index = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).ym) {
+                        (window as any).ym(106231633, 'reachGoal', 'click_telegram');
+                      }
+                    }}
                   >
                     <Icon name="Send" size={20} />
                     <span>Telegram</span>
@@ -460,6 +470,11 @@ const Index = () => {
                   <a 
                     href="mailto:uzso-to@ya.ru" 
                     className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).ym) {
+                        (window as any).ym(106231633, 'reachGoal', 'click_email');
+                      }
+                    }}
                   >
                     <Icon name="Mail" size={20} />
                     <span>uzso-to@ya.ru</span>
