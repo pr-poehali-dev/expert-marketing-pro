@@ -314,6 +314,131 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="cases" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading font-bold text-4xl text-center mb-4 text-secondary">
+            Реальные кейсы
+          </h2>
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+            Примеры работ с конкретными цифрами и результатами
+          </p>
+          
+          <div className="max-w-6xl mx-auto">
+            <Card className="border-2 hover:shadow-2xl transition-all">
+              <CardContent className="p-8 md:p-12">
+                <div className="grid md:grid-cols-2 gap-12 items-start">
+                  <div>
+                    <div className="mb-6">
+                      <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        Кейс по оформлению карточки товара
+                      </span>
+                      <h3 className="font-heading font-bold text-3xl mb-4 text-secondary">
+                        Туфли IERDI Классика
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        Как перезапуск карточки "Туфли IERDI Классика" повысил доверие к бренду и конверсию карточки
+                      </p>
+                    </div>
+
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-heading font-semibold text-xl mb-3 text-secondary flex items-center gap-2">
+                          <Icon name="Target" size={24} className="text-primary" />
+                          Проблема
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>Карточка не подчеркивала ключевое УТП бренда — замша и комфорт при ежедневной носке</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>Ракурсов много, но все однотипные, без инфографики</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>Покупатель не понимает, как туфли сидят на ноге и подойдут ли под его стиль</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="font-heading font-semibold text-xl mb-3 text-secondary flex items-center gap-2">
+                          <Icon name="CheckCircle2" size={24} className="text-primary" />
+                          Решение
+                        </h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>Визуально выделили модель в выдаче за счет сильной обложки и продуманного визуала</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>Повысили конверсию карточки и увеличили количество заказов модели</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>Снизили сомнения по размеру, полноте и назначению туфель</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-primary/5 p-6 rounded-lg">
+                        <h4 className="font-heading font-semibold text-xl mb-4 text-secondary flex items-center gap-2">
+                          <Icon name="TrendingUp" size={24} className="text-primary" />
+                          Результаты
+                        </h4>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <p className="text-sm text-muted-foreground mb-1">Конверсия карточки</p>
+                            <p className="font-bold text-2xl text-primary">Y% → Z%</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground mb-1">Заказы в месяц</p>
+                            <p className="font-bold text-2xl text-primary">X → X·k</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground mb-1">CTR из выдачи</p>
+                            <p className="font-bold text-2xl text-primary">A% → B%</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground mb-1">Добавления в избранное</p>
+                            <p className="font-bold text-2xl text-primary">N → M шт/мес</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm font-semibold text-muted-foreground mb-3">ДО: Карточка до работы</p>
+                      <div className="grid grid-cols-4 gap-2 mb-6">
+                        <img src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0001.jpg" alt="До работы" className="w-full rounded-lg border-2 border-muted" />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <p className="text-sm font-semibold text-primary mb-3">ПОСЛЕ: Обновленная карточка</p>
+                      <div className="grid grid-cols-4 gap-2">
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                          <img 
+                            key={i}
+                            src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0003.jpg" 
+                            alt={`После работы ${i}`}
+                            className="w-full rounded-lg border-2 border-primary shadow-lg hover:scale-105 transition-transform"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <section id="reviews" className="py-20 bg-muted/30 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <img 
