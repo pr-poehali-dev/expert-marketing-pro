@@ -153,7 +153,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
               <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl flex-shrink-0">
                 <img 
-                  src="https://cdn.poehali.dev/projects/ec941e82-cfd5-41bd-9d45-9a0a99f4b272/files/81c3aa3c-5298-4f48-a986-17461045773f.jpg" 
+                  src="https://cdn.poehali.dev/files/Фото А.Караулов.jpg" 
                   alt="Анатолий Караулов - эксперт маркетолог" 
                   className="w-full h-full object-cover"
                 />
