@@ -150,11 +150,22 @@ const Index = () => {
             <h2 className="font-heading font-bold text-4xl text-center mb-6 text-secondary">
               Кто я и чем полезен
             </h2>
-            <p className="text-lg text-center mb-12 text-muted-foreground leading-relaxed">
-              Моя задача — помочь вам выбрать прибыльную нишу и создать карточки товаров, которые будут продавать. 
-              Я предлагаю комплексную услугу, которая сэкономит ваше время, даст точное понимание спроса и обеспечит 
-              уверенность в каждом шаге. Вы получите привлекательные карточки, готовые к продаже, и четкий план действий.
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+              <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl flex-shrink-0">
+                <img 
+                  src="https://cdn.poehali.dev/projects/ec941e82-cfd5-41bd-9d45-9a0a99f4b272/files/81c3aa3c-5298-4f48-a986-17461045773f.jpg" 
+                  alt="Анатолий Караулов - эксперт маркетолог" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Моя задача — помочь вам выбрать прибыльную нишу и создать карточки товаров, которые будут продавать. 
+                  Я предлагаю комплексную услугу, которая сэкономит ваше время, даст точное понимание спроса и обеспечит 
+                  уверенность в каждом шаге. Вы получите привлекательные карточки, готовые к продаже, и четкий план действий.
+                </p>
+              </div>
+            </div>
             <div className="text-center">
               <h3 className="font-heading font-semibold text-2xl mb-8 text-secondary">
                 Что вы получите?
