@@ -120,10 +120,10 @@ const Index = () => {
                 Я — Эксперт-маркетолог (нейромейкер), Ваш надежный партнер в мире онлайн-торговли
               </p>
               <p className="text-lg mb-8 text-white/80 leading-relaxed">
-                Помогу запустить и проанализирую спрос на товар на маркетплейсах на основе цифр. Покажу, где теряешь до 40% продаж. Узнай, жми!
+                Проанализирую спрос на товар, конкурентов и целевую аудиторию, чтобы ваша карточка работала на вас. Покажу, где теряешь до 40% продаж
               </p>
               <Button size="lg" className="bg-red-600 text-white hover:bg-red-700 text-lg px-8 py-6 h-auto animate-scale-in animate-pulse-glow rounded-full">
-                <a href="#contact">Получить бесплатную консультацию</a>
+                <a href="#contact">Получить консультацию</a>
               </Button>
             </div>
             <div className="animate-slide-in-right hidden md:block">
@@ -554,7 +554,7 @@ const Index = () => {
                   />
                 </div>
                 <Button type="submit" size="lg" className="w-full bg-red-600 hover:bg-red-700 text-white text-lg h-14 rounded-full animate-pulse-glow">
-                  Записаться на консультацию
+                  Оформить карточку товара
                 </Button>
               </form>
               
