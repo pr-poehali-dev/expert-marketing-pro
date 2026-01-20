@@ -432,14 +432,11 @@ const Index = () => {
                     <div>
                       <p className="text-sm font-semibold text-primary mb-3">ПОСЛЕ: Обновленная карточка</p>
                       <div className="grid grid-cols-4 gap-2">
-                        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                          <img 
-                            key={i}
-                            src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0003.jpg" 
-                            alt={`После работы ${i}`}
-                            className="w-full rounded-lg border-2 border-primary shadow-lg hover:scale-105 transition-transform"
-                          />
-                        ))}
+                        <img 
+                          src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0003.jpg" 
+                          alt="После работы"
+                          className="w-full rounded-lg border-2 border-primary shadow-lg hover:scale-105 transition-transform"
+                        />
                       </div>
                     </div>
                   </div>
