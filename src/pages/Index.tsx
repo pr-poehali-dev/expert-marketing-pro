@@ -421,22 +421,22 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8">
+                  <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <div>
-                      <p className="text-sm font-semibold text-muted-foreground mb-3">ДО: Карточка до работы</p>
+                      <p className="text-base font-semibold text-muted-foreground mb-4">ДО: Карточка до работы</p>
                       <img 
                         src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0001.jpg" 
                         alt="До работы" 
-                        className="w-full rounded-lg border-2 border-muted shadow-md hover:scale-105 transition-transform"
+                        className="w-full rounded-xl border-4 border-muted shadow-xl hover:scale-[1.02] transition-transform cursor-pointer"
                       />
                     </div>
                     
                     <div>
-                      <p className="text-sm font-semibold text-primary mb-3">ПОСЛЕ: Обновленная карточка</p>
+                      <p className="text-base font-semibold text-primary mb-4">ПОСЛЕ: Обновленная карточка</p>
                       <img 
                         src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0003.jpg" 
                         alt="После работы"
-                        className="w-full rounded-lg border-2 border-primary shadow-lg hover:scale-105 transition-transform"
+                        className="w-full rounded-xl border-4 border-primary shadow-2xl hover:scale-[1.02] transition-transform cursor-pointer"
                       />
                     </div>
                   </div>
