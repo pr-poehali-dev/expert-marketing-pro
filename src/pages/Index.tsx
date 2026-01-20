@@ -9,6 +9,23 @@ import { toast } from 'sonner';
 const Index = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  
+  const caseImages = [
+    'https://cdn.poehali.dev/files/Кейс Карточка товара_page-0001.jpg',
+    'https://cdn.poehali.dev/files/Кейс Карточка товара_page-0003.jpg'
+  ];
+
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (!fullscreenImage) return;
+    const currentIndex = caseImages.indexOf(fullscreenImage);
+    if (direction === 'prev') {
+      const newIndex = currentIndex === 0 ? caseImages.length - 1 : currentIndex - 1;
+      setFullscreenImage(caseImages[newIndex]);
+    } else {
+      const newIndex = currentIndex === caseImages.length - 1 ? 0 : currentIndex + 1;
+      setFullscreenImage(caseImages[newIndex]);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -446,13 +463,26 @@ const Index = () => {
 
                   {fullscreenImage && (
                     <div 
-                      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-pointer"
+                      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
                       onClick={() => setFullscreenImage(null)}
                     >
+                      <button 
+                        className="absolute left-4 text-white hover:text-primary transition-colors z-10"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigateImage('prev');
+                        }}
+                      >
+                        <Icon name="ChevronLeft" size={48} />
+                      </button>
+                      
                       <div className="relative max-w-7xl max-h-full">
                         <button 
                           className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
-                          onClick={() => setFullscreenImage(null)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFullscreenImage(null);
+                          }}
                         >
                           <Icon name="X" size={32} />
                         </button>
@@ -463,6 +493,16 @@ const Index = () => {
                           onClick={(e) => e.stopPropagation()}
                         />
                       </div>
+
+                      <button 
+                        className="absolute right-4 text-white hover:text-primary transition-colors z-10"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigateImage('next');
+                        }}
+                      >
+                        <Icon name="ChevronRight" size={48} />
+                      </button>
                     </div>
                   )}
                 </div>
