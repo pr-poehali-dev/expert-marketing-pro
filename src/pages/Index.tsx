@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -428,6 +429,7 @@ const Index = () => {
                         src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0001.jpg" 
                         alt="До работы" 
                         className="w-full rounded-xl border-4 border-muted shadow-xl hover:scale-[1.02] transition-transform cursor-pointer"
+                        onClick={() => setFullscreenImage('https://cdn.poehali.dev/files/Кейс Карточка товара_page-0001.jpg')}
                       />
                     </div>
                     
@@ -437,9 +439,32 @@ const Index = () => {
                         src="https://cdn.poehali.dev/files/Кейс Карточка товара_page-0003.jpg" 
                         alt="После работы"
                         className="w-full rounded-xl border-4 border-primary shadow-2xl hover:scale-[1.02] transition-transform cursor-pointer"
+                        onClick={() => setFullscreenImage('https://cdn.poehali.dev/files/Кейс Карточка товара_page-0003.jpg')}
                       />
                     </div>
                   </div>
+
+                  {fullscreenImage && (
+                    <div 
+                      className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-pointer"
+                      onClick={() => setFullscreenImage(null)}
+                    >
+                      <div className="relative max-w-7xl max-h-full">
+                        <button 
+                          className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
+                          onClick={() => setFullscreenImage(null)}
+                        >
+                          <Icon name="X" size={32} />
+                        </button>
+                        <img 
+                          src={fullscreenImage} 
+                          alt="Полноэкранный просмотр" 
+                          className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                          onClick={(e) => e.stopPropagation()}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
